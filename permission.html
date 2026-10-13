@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCR Tracker - Google Permission</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900/40 backdrop-blur-sm flex items-center justify-center min-h-screen p-4">
+
+    <!-- Modal Box -->
+    <div class="bg-white rounded-2xl p-6 md:p-8 max-w-md w-full shadow-2xl border border-slate-100">
+        
+        <!-- Google Logo & Title -->
+        <div class="text-center mb-6">
+            <svg class="w-10 h-10 mx-auto mb-3" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.1 0-5.74-2.09-6.68-4.91H1.32v3.15C3.3 21.32 7.37 24 12 24z"/>
+                <path fill="#FBBC05" d="M5.32 14.29c-.24-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.56H1.32C.48 8.24 0 10.06 0 12s.48 3.76 1.32 5.44l4-3.15z"/>
+                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.37 0 3.3 2.68 1.32 6.56l4 3.15c.94-2.82 3.58-4.96 6.68-4.96z"/>
+            </svg>
+            <h2 class="text-xl font-bold text-slate-800">GCR Tracker wants to access your Google Account</h2>
+            <p class="text-xs text-blue-600 font-medium mt-1">muskan.lohana@gmail.com</p>
+        </div>
+
+        <!-- Permissions List -->
+        <div class="space-y-4 text-sm text-slate-600 mb-8 bg-slate-50 p-4 rounded-xl border border-slate-100">
+            <p class="font-semibold text-slate-700 text-xs uppercase tracking-wider">This will allow GCR Tracker to:</p>
+            
+            <div class="flex items-start gap-3">
+                <span class="text-blue-600 text-base">📊</span>
+                <p class="text-xs">View and manage your Google Classroom classes and coursework</p>
+            </div>
+            
+            <div class="flex items-start gap-3">
+                <span class="text-red-500 text-base">✉️</span>
+                <p class="text-xs">View your email address</p>
+            </div>
+            
+            <div class="flex items-start gap-3">
+                <span class="text-blue-500 text-base">👤</span>
+                <p class="text-xs">See your basic profile info</p>
+            </div>
+        </div>
+
+        <p class="text-[11px] text-slate-400 mb-6 text-center">
+            Make sure you trust GCR Tracker. You can always see or remove access in your Google Account.
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex gap-4">
+            <a href="login.html" class="flex-1 text-center py-2.5 border border-slate-300 rounded-xl font-medium text-slate-600 hover:bg-slate-50 transition text-sm">
+                Cancel
+            </a>
+            <a href="dashboard.html" class="flex-1 text-center py-2.5 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition shadow-md text-sm">
+                Continue
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
