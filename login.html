@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCR Tracker - Login</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 flex items-center justify-center min-h-screen p-4">
+
+    <div class="max-w-4xl w-full bg-white rounded-2xl shadow-xl overflow-hidden grid md:grid-cols-2 border border-slate-100">
+        <!-- Left Section (Login Form) -->
+        <div class="p-8 md:p-12 flex flex-col justify-center">
+            <div class="flex items-center gap-2 text-blue-600 font-bold text-2xl mb-6">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                </svg>
+                <span>GCR Tracker</span>
+            </div>
+
+            <h2 class="text-2xl font-bold text-slate-800 mb-1">Welcome back.</h2>
+            <p class="text-slate-500 text-xs mb-6">Please login to continue.</p>
+
+            <!-- Login Form (Email & Password) -->
+            <form action="permission.html" method="GET" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">Email address</label>
+                    <input type="email" required placeholder="student@gmail.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">Password</label>
+                    <input type="password" required placeholder="••••••••" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-4 rounded-xl transition shadow-md text-sm">
+                    Login
+                </button>
+            </form>
+
+            <div class="flex items-center my-4">
+                <div class="flex-grow border-t border-slate-200"></div>
+                <span class="px-3 text-slate-400 text-xs">OR</span>
+                <div class="flex-grow border-t border-slate-200"></div>
+            </div>
+
+            <!-- Continue with Google Button -->
+            <a href="permission.html" class="w-full bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-medium py-2.5 px-4 rounded-xl flex items-center justify-center gap-3 transition text-sm shadow-sm">
+                <svg class="w-4 h-4" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.1 0-5.74-2.09-6.68-4.91H1.32v3.15C3.3 21.32 7.37 24 12 24z"/>
+                    <path fill="#FBBC05" d="M5.32 14.29c-.24-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.56H1.32C.48 8.24 0 10.06 0 12s.48 3.76 1.32 5.44l4-3.15z"/>
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.37 0 3.3 2.68 1.32 6.56l4 3.15c.94-2.82 3.58-4.96 6.68-4.96z"/>
+                </svg>
+                Continue with Google
+            </a>
+
+            <p class="text-center text-xs text-slate-400 mt-6">Only for GCR students</p>
+        </div>
+
+        <!-- Right Section (Illustration Image) -->
+        <div class="bg-blue-50 p-8 flex items-center justify-center">
+            <img src="https://illustrations.popsy.co/blue/work-from-home.svg" alt="Student Illustration" class="w-4/5 max-w-sm">
+        </div>
+    </div>
+
+</body>
+</html>
