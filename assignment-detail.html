@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCR Tracker - Assignment Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-[#0B132B] text-white flex flex-col justify-between hidden md:flex">
+            <div>
+                <div class="flex items-center space-x-3 px-6 py-6 border-b border-gray-800">
+                    <div class="bg-blue-600 p-2 rounded-lg text-white"><i class="fa-solid fa-graduation-cap text-xl"></i></div>
+                    <span class="text-xl font-bold tracking-wide">GCR Tracker</span>
+                </div>
+                <nav class="mt-6 px-4 space-y-2">
+                    <a href="dashboard.html" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition">
+                        <i class="fa-solid fa-house"></i><span>Dashboard</span>
+                    </a>
+                    <a href="assignments.html" class="flex items-center space-x-3 px-4 py-3 bg-blue-600 text-white rounded-xl font-medium shadow-lg">
+                        <i class="fa-solid fa-book-open"></i><span>Assignments</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition">
+                        <i class="fa-regular fa-calendar"></i><span>Calendar</span>
+                    </a>
+                    <a href="notifications.html" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition relative">
+                        <i class="fa-regular fa-bell"></i><span>Notifications</span>
+                        <span class="absolute right-4 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">3</span>
+                    </a>
+                    <a href="classroom.html" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition">
+                        <i class="fa-solid fa-chalkboard"></i><span>Google Classroom</span>
+                    </a>
+                    <a href="settings.html" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition">
+                        <i class="fa-solid fa-gear"></i><span>Settings</span>
+                    </a>
+                </nav>
+            </div>
+            <div class="p-4 border-t border-gray-800">
+                <a href="index.html" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-red-400 transition">
+                    <i class="fa-solid fa-right-from-bracket"></i><span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 flex flex-col overflow-y-auto">
+            <header class="bg-white border-b border-gray-200 px-8 py-4 flex justify-between items-center">
+                <div class="flex items-center space-x-4 ml-auto">
+                    <div class="w-9 h-9 bg-blue-600 text-white font-semibold rounded-full flex items-center justify-center">M</div>
+                    <span class="font-semibold text-gray-800 text-sm">Muskan</span>
+                </div>
+            </header>
+
+            <main class="p-8 max-w-4xl space-y-6">
+                <div>
+                    <a href="assignments.html" class="inline-flex items-center space-x-2 text-sm font-semibold text-gray-600 hover:text-blue-600 transition">
+                        <i class="fa-solid fa-chevron-left text-xs"></i><span>Back to Assignments</span>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-gray-100">
+                        <div>
+                            <h1 id="assign-title" class="text-2xl font-bold text-gray-950">Loading...</h1>
+                            <div class="flex flex-wrap items-center gap-4 mt-2 text-xs text-gray-500">
+                                <span><i class="fa-regular fa-clock mr-1"></i><span id="assign-due">Due: --</span></span>
+                                <span><i class="fa-solid fa-hourglass-half mr-1"></i><span id="assign-time">Estimated time: --</span></span>
+                            </div>
+                        </div>
+                        <span id="assign-badge" class="px-3 py-1.5 text-xs font-bold rounded-full">--</span>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h3 class="text-sm font-bold text-gray-800">Description</h3>
+                        <p id="assign-desc" class="text-sm text-gray-600 leading-relaxed">--</p>
+                    </div>
+
+                    <div class="pt-4">
+                        <button id="assign-btn" class="w-full py-3.5 text-white font-semibold rounded-xl shadow-lg transition">
+                            Mark as Started
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+    </div>
+
+    <!-- Script to load specific assignment details -->
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const type = urlParams.get('type') || 'pf';
+
+        const data = {
+            pf: {
+                title: "PF Lab Assignment 04",
+                due: "Tomorrow, 11:59 PM",
+                time: "3 hours",
+                priority: "High Priority",
+                badgeClass: "bg-red-50 text-red-600",
+                desc: "Build the given C program and upload the output screenshot. Also create a GitHub branch named 'post lab' and push your code.",
+                btnClass: "bg-blue-600 hover:bg-blue-700"
+            },
+            english: {
+                title: "English Lab Presentation",
+                due: "3 Days left",
+                time: "2 hours",
+                priority: "Medium Priority",
+                badgeClass: "bg-amber-50 text-amber-600",
+                desc: "Prepare 5-minute presentation slides on Effective Communication Skills in IT. Include introduction, key points, and conclusion.",
+                btnClass: "bg-amber-500 hover:bg-amber-600"
+            },
+            ict: {
+                title: "ICT Theory & Lab Project",
+                due: "Next Week, Friday",
+                time: "5 hours",
+                priority: "Low Priority",
+                badgeClass: "bg-emerald-50 text-emerald-600",
+                desc: "Create a complete research report on Emerging Technologies (AI, Cloud Computing, and IoT). Submit a ZIP file containing your documentation and slides.",
+                btnClass: "bg-emerald-600 hover:bg-emerald-700"
+            }
+        };
+
+        const current = data[type] || data['pf'];
+
+        document.getElementById('assign-title').innerText = current.title;
+        document.getElementById('assign-due').innerText = "Due: " + current.due;
+        document.getElementById('assign-time').innerText = "Estimated time: " + current.time;
+        
+        const badge = document.getElementById('assign-badge');
+        badge.innerText = current.priority;
+        badge.className = "px-3 py-1.5 text-xs font-bold rounded-full " + current.badgeClass;
+
+        document.getElementById('assign-desc').innerText = current.desc;
+
+        const btn = document.getElementById('assign-btn');
+        btn.className = "w-full py-3.5 text-white font-semibold rounded-xl shadow-lg transition " + current.btnClass;
+    </script>
+
+</body>
+</html>
