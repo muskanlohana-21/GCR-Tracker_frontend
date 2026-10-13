@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCR Tracker - Academic Calendar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="w-64 bg-[#0B132B] text-white flex flex-col justify-between hidden md:flex">
+            <div>
+                <div class="flex items-center space-x-3 px-6 py-6 border-b border-gray-800">
+                    <div class="bg-blue-600 p-2 rounded-lg text-white">
+                        <i class="fa-solid fa-graduation-cap text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-wide">GCR Tracker</span>
+                </div>
+
+                <nav class="mt-6 px-4 space-y-2">
+                    <a href="dashboard.html" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    
+                    <a href="assignments.html" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition">
+                        <i class="fa-solid fa-book-open"></i>
+                        <span>Assignments</span>
+                    </a>
+
+                    <a href="calendar.html" class="flex items-center space-x-3 px-4 py-3 bg-blue-600 text-white rounded-xl font-medium shadow-lg">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span>Calendar</span>
+                    </a>
+
+                    <a href="notifications.html" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition relative">
+                        <i class="fa-regular fa-bell"></i>
+                        <span>Notifications</span>
+                        <span class="absolute right-4 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">3</span>
+                    </a>
+
+                    <a href="classroom.html" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition">
+                        <i class="fa-solid fa-chalkboard"></i>
+                        <span>Google Classroom</span>
+                    </a>
+
+                    <a href="settings.html" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="p-4 border-t border-gray-800">
+                <a href="index.html" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-red-400 transition">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 flex flex-col overflow-y-auto">
+
+            <header class="bg-white border-b border-gray-200 px-8 py-4 flex justify-between items-center">
+                <div class="flex items-center space-x-4 ml-auto">
+                    <a href="notifications.html" class="text-gray-500 hover:text-gray-700 relative">
+                        <i class="fa-regular fa-bell text-xl"></i>
+                        <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
+                    </a>
+                    <a href="settings.html" class="flex items-center space-x-3 border-l pl-4 border-gray-200">
+                        <div class="w-9 h-9 bg-blue-600 text-white font-semibold rounded-full flex items-center justify-center">
+                            M
+                        </div>
+                        <span class="font-semibold text-gray-800 text-sm">Muskan</span>
+                    </a>
+                </div>
+            </header>
+
+            <main class="p-8 max-w-6xl space-y-8">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">Academic Calendar</h1>
+                        <p class="text-sm text-gray-500 mt-1">Full view of your monthly assignments, deadlines, and schedule.</p>
+                    </div>
+                    <div class="flex items-center space-x-3 bg-white px-4 py-2 rounded-xl border border-gray-100 shadow-sm">
+                        <span class="inline-flex items-center text-xs font-semibold text-gray-600"><span class="w-2.5 h-2.5 bg-red-500 rounded-full mr-1.5"></span> High Priority</span>
+                        <span class="inline-flex items-center text-xs font-semibold text-gray-600"><span class="w-2.5 h-2.5 bg-amber-500 rounded-full mr-1.5"></span> Medium Priority</span>
+                        <span class="inline-flex items-center text-xs font-semibold text-gray-600"><span class="w-2.5 h-2.5 bg-emerald-500 rounded-full mr-1.5"></span> Low Priority</span>
+                    </div>
+                </div>
+
+                <!-- Calendar Grid View -->
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 space-y-6">
+                    <div class="flex justify-between items-center pb-4 border-b border-gray-100">
+                        <h2 class="font-bold text-gray-800 text-lg flex items-center gap-2">
+                            <i class="fa-regular fa-calendar-days text-blue-600"></i> October 2026
+                        </h2>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded-lg text-xs font-semibold text-gray-600 transition"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded-lg text-xs font-semibold text-gray-600 transition"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Days Header -->
+                    <div class="grid grid-cols-7 gap-2 text-center text-xs font-bold text-gray-400 uppercase tracking-wider">
+                        <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
+                    </div>
+
+                    <!-- Grid -->
+                    <div class="grid grid-cols-7 gap-2 text-sm">
+                        <div class="h-28 p-2 bg-gray-50/50 rounded-xl border border-gray-100 text-gray-300">28</div>
+                        <div class="h-28 p-2 bg-gray-50/50 rounded-xl border border-gray-100 text-gray-300">29</div>
+                        <div class="h-28 p-2 bg-gray-50/50 rounded-xl border border-gray-100 text-gray-300">30</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">1</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">2</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">3</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">4</div>
+
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">5</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">6</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">7</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">8</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">9</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">10</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">11</div>
+
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">12</div>
+                        
+                        <!-- 13th Oct: High Priority -->
+                        <div class="h-28 p-2 bg-red-50/60 rounded-xl border-2 border-red-400 font-semibold text-red-900 flex flex-col justify-between shadow-sm relative">
+                            <span class="bg-red-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">13</span>
+                            <a href="assignment-detail.html?type=pf" class="block bg-red-500 hover:bg-red-600 text-white text-[10px] p-1.5 rounded-lg shadow transition">
+                                <div class="font-bold truncate">PF Lab 04</div>
+                                <div class="text-[9px] opacity-90">Due 11:59 PM</div>
+                            </a>
+                        </div>
+
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">14</div>
+
+                        <!-- 15th Oct: Medium Priority -->
+                        <div class="h-28 p-2 bg-amber-50/60 rounded-xl border border-amber-200 font-semibold text-amber-900 flex flex-col justify-between">
+                            <span>15</span>
+                            <a href="assignment-detail.html?type=english" class="block bg-amber-500 hover:bg-amber-600 text-white text-[10px] p-1.5 rounded-lg shadow transition">
+                                <div class="font-bold truncate">English Pres.</div>
+                                <div class="text-[9px] opacity-90">Due 05:00 PM</div>
+                            </a>
+                        </div>
+
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">16</div>
+
+                        <!-- 17th Oct: Low Priority -->
+                        <div class="h-28 p-2 bg-emerald-50/60 rounded-xl border border-emerald-200 font-semibold text-emerald-900 flex flex-col justify-between">
+                            <span>17</span>
+                            <a href="assignment-detail.html?type=ict" class="block bg-emerald-600 hover:bg-emerald-700 text-white text-[10px] p-1.5 rounded-lg shadow transition">
+                                <div class="font-bold truncate">ICT Project</div>
+                                <div class="text-[9px] opacity-90">Due 11:59 PM</div>
+                            </a>
+                        </div>
+
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">18</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">19</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">20</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">21</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">22</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">23</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">24</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">25</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">26</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">27</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">28</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">29</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">30</div>
+                        <div class="h-28 p-2 bg-white rounded-xl border border-gray-100 font-semibold text-gray-800">31</div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+    </div>
+
+</body>
+</html>
