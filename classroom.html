@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCR Tracker - Google Classroom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-[#0B132B] text-white flex flex-col justify-between hidden md:flex">
+            <div>
+                <div class="flex items-center space-x-3 px-6 py-6 border-b border-gray-800">
+                    <div class="bg-blue-600 p-2 rounded-lg text-white">
+                        <i class="fa-solid fa-graduation-cap text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-wide">GCR Tracker</span>
+                </div>
+
+                <nav class="mt-6 px-4 space-y-2">
+                    <a href="dashboard.html" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="assignments.html" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition">
+                        <i class="fa-solid fa-book-open"></i>
+                        <span>Assignments</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span>Calendar</span>
+                    </a>
+                    <a href="notifications.html" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition relative">
+                        <i class="fa-regular fa-bell"></i>
+                        <span>Notifications</span>
+                        <span class="absolute right-4 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">3</span>
+                    </a>
+                    <a href="classroom.html" class="flex items-center space-x-3 px-4 py-3 bg-blue-600 text-white rounded-xl font-medium shadow-lg">
+                        <i class="fa-solid fa-chalkboard"></i>
+                        <span>Google Classroom</span>
+                    </a>
+                    <a href="settings.html" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="p-4 border-t border-gray-800">
+                <a href="index.html" class="flex items-center space-x-3 px-4 py-3 text-gray-400 hover:text-red-400 transition">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 flex flex-col overflow-y-auto">
+
+            <header class="bg-white border-b border-gray-200 px-8 py-4 flex justify-between items-center">
+                <div class="flex items-center space-x-4 ml-auto">
+                    <a href="notifications.html" class="text-gray-500 hover:text-gray-700 relative">
+                        <i class="fa-regular fa-bell text-xl"></i>
+                        <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
+                    </a>
+                    <a href="settings.html" class="flex items-center space-x-3 border-l pl-4 border-gray-200">
+                        <div class="w-9 h-9 bg-blue-600 text-white font-semibold rounded-full flex items-center justify-center">
+                            M
+                        </div>
+                        <span class="font-semibold text-gray-800 text-sm">Muskan</span>
+                    </a>
+                </div>
+            </header>
+
+            <main class="p-8 max-w-6xl space-y-8">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">Google Classroom</h1>
+                        <p class="text-sm text-gray-500 mt-1">Manage connected classes and sync assignments directly.</p>
+                    </div>
+                    <button class="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl shadow transition flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-rotate"></i>
+                        <span>Sync All Classes</span>
+                    </button>
+                </div>
+
+                <!-- Classroom Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col justify-between">
+                        <div class="p-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+                            <div class="flex justify-between items-start">
+                                <span class="px-2.5 py-1 bg-white/20 text-white text-xs font-semibold rounded-full backdrop-blur-sm">Active</span>
+                                <i class="fa-brands fa-google text-xl text-white/80"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mt-3">PF Lab Section B</h3>
+                            <p class="text-xs text-blue-100 mt-1">Instructor: Sir Ahmed Khan</p>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between text-xs text-gray-600">
+                                <span>Total Assignments</span>
+                                <span class="font-bold text-gray-800">4</span>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-600">
+                                <span>Pending Deadlines</span>
+                                <span class="font-bold text-red-500">2</span>
+                            </div>
+                            <div class="pt-2">
+                                <a href="assignments.html" class="w-full py-2 bg-gray-50 hover:bg-gray-100 text-gray-700 font-semibold text-xs rounded-xl border border-gray-200 transition block text-center">
+                                    View Assignments
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col justify-between">
+                        <div class="p-6 bg-gradient-to-r from-amber-500 to-orange-600 text-white">
+                            <div class="flex justify-between items-start">
+                                <span class="px-2.5 py-1 bg-white/20 text-white text-xs font-semibold rounded-full backdrop-blur-sm">Active</span>
+                                <i class="fa-brands fa-google text-xl text-white/80"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mt-3">English Communication</h3>
+                            <p class="text-xs text-amber-100 mt-1">Instructor: Mam Sara</p>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between text-xs text-gray-600">
+                                <span>Total Assignments</span>
+                                <span class="font-bold text-gray-800">2</span>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-600">
+                                <span>Pending Deadlines</span>
+                                <span class="font-bold text-amber-500">1</span>
+                            </div>
+                            <div class="pt-2">
+                                <a href="assignments.html" class="w-full py-2 bg-gray-50 hover:bg-gray-100 text-gray-700 font-semibold text-xs rounded-xl border border-gray-200 transition block text-center">
+                                    View Assignments
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col justify-between">
+                        <div class="p-6 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
+                            <div class="flex justify-between items-start">
+                                <span class="px-2.5 py-1 bg-white/20 text-white text-xs font-semibold rounded-full backdrop-blur-sm">Active</span>
+                                <i class="fa-brands fa-google text-xl text-white/80"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mt-3">ICT Theory & Lab</h3>
+                            <p class="text-xs text-emerald-100 mt-1">Instructor: Sir Farhan</p>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between text-xs text-gray-600">
+                                <span>Total Assignments</span>
+                                <span class="font-bold text-gray-800">3</span>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-600">
+                                <span>Pending Deadlines</span>
+                                <span class="font-bold text-emerald-600">1</span>
+                            </div>
+                            <div class="pt-2">
+                                <a href="assignments.html" class="w-full py-2 bg-gray-50 hover:bg-gray-100 text-gray-700 font-semibold text-xs rounded-xl border border-gray-200 transition block text-center">
+                                    View Assignments
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>
+        </div>
+
+    </div>
+
+</body>
+</html>
